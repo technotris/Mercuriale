@@ -30,7 +30,7 @@ class ProductController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
-        $fillImage = Action::new('updateImage', 'updateImage')
+        $fillImage = Action::new('updateImage', 'Update image')
                 ->linkToCrudAction('updateImage')->displayIf(fn (Product $product) => is_null($product->getImage())
                 );
 
