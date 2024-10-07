@@ -1,0 +1,26 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{# @var field \EasyCorp\Bundle\EasyAdminBundle\Dto\FieldDto #}
+{# @var entity \EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto #}
+{% if ea.crud.currentAction == 'detail' %}
+	<p>Total: {{ field.value | length }}</p>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Product</th>
+			<th>Price</th>
+		<tr>
+	</thead>
+	<tbody>
+	{% for supplierproduct in field.value %}
+		<tr>
+			<td>{{ supplierproduct.product.code }}</td>
+			<td>{{ supplierproduct.product.name }}</td>
+			<td>{{ (supplierproduct.price / 100) | format_currency('EUR') }}</td>
+		</tr>
+	{% endfor %}
+	<tbody>
+</table>
+{% else %}
+    <span class="badge badge-secondary">{{ field.formattedValue }}</span>
+{% endif %}

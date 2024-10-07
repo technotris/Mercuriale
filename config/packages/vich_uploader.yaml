@@ -1,0 +1,10 @@
+vich_uploader:
+    db_driver: orm
+
+    # change the mapping to more secure location and maybe not on premise but on a dedicated storage server
+    mappings:
+        imports:
+            uri_prefix: /import/products
+            upload_destination: '%kernel.project_dir%/public/import/products'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: true

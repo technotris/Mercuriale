@@ -1,0 +1,28 @@
+# config/packages/workflow.yaml
+framework:
+    workflows:
+        import_validation:
+            type: 'state_machine' # or 'workflow'
+            audit_trail:
+                enabled: true
+            marking_store:
+                type: 'method'
+                property: 'status'
+            supports:
+                - App\Entity\FileImport
+            initial_marking: draft
+            places:          # defining places manually is optional
+                - draft
+                - imported
+                - rejected
+                - approved
+            transitions:
+                to_review:
+                    from: draft
+                    to:   imported
+                approve:
+                    from: imported
+                    to:   approved
+                reject:
+                    from: imported
+                    to:   rejected
