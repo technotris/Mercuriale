@@ -4,6 +4,8 @@ services:
     build:
       context: .
       target: frankenphp_dev
+    environment:
+      MAILER_DSN: smtp://mailer:1025
     volumes:
       - ./:/app
       - ./frankenphp/Caddyfile:/etc/caddy/Caddyfile:ro
@@ -16,10 +18,11 @@ services:
       # Ensure that host.docker.internal is correctly defined on Linux
       - host.docker.internal:host-gateway
     tty: true
-
+    
 ###> symfony/mailer ###
   mailer:
     image: axllent/mailpit
+    hostname: localhost
     ports:
       - "1025"
       - "8025"

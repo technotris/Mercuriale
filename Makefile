@@ -21,6 +21,9 @@ help: ## Outputs this help screen
 build: ## Builds the Docker images
 	@$(DOCKER_COMP) build --pull --no-cache
 
+updev: ## Start the docker hub in detached mode (no logs)
+	@$(DOCKER_COMP) -f compose.override.yaml -f docker-compose.yml up --detach 
+
 up: ## Start the docker hub in detached mode (no logs)
 	@$(DOCKER_COMP) up --detach
 
@@ -47,7 +50,7 @@ phpcs:
 	@$(DOCKER_COMP) exec -e APP_ENV=test php vendor/bin/php-cs-fixer fix tests
 
 message:
-	@$(DOCKER_COMP) exec -e APP_ENV=dev php bin/console messenger:consume async -vv
+	@$(DOCKER_COMP) exec -e APP_ENV=dev php bin/console messenger:consume async
 
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'
