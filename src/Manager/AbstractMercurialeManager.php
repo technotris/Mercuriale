@@ -53,7 +53,7 @@ abstract class AbstractMercurialeManager
                 $product = $newProduct;
             }
             // prevent issues with storing in float and computation between floats
-            $priceInCents = (int) (((float) $priceRepresentation) * 100);
+            $priceInCents = $dto->convertPriceInCents();
             $error = $this->insertDb($fileImport, $product, $priceInCents);
             if ($error) {
                 $errorList[] = $error;

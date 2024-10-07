@@ -15,7 +15,7 @@ class ProductDTO
 
     #[Assert\NotBlank(message: 'price is required')]
     #[Assert\GreaterThan(0)]
-    #[Assert\LessThan(100000)]
+    #[Assert\LessThan(1000)]
     #[Assert\Type('numeric')]
     public string $price;
 
@@ -36,5 +36,10 @@ class ProductDTO
         $newProduct->setName($this->name);
 
         return $newProduct;
+    }
+
+    public function convertPriceInCents(): int
+    {
+        return (int) (((float) $this->price) * 100);
     }
 }

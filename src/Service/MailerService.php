@@ -26,7 +26,7 @@ class MailerService
         }
 
         $email = (new Email())
-            ->from('technotris@free.fr')
+            ->from('noreply@example.com')
             ->to('chunhoo.ngo@gmail.com')
             ->subject('Report for mercuriale: #'.$fileImport->getId())
             ->text($text."\n".$errorText);

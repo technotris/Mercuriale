@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Event\AfterEntityPersistedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 
+// Possible issue if upload is not done on the easyadmin interface
 class FileImportSubscriber implements EventSubscriberInterface
 {
     public function __construct(private MessageBusInterface $bus)
