@@ -18,7 +18,7 @@ services:
       context: .
       target: app_php
       args:
-        SYMFONY_VERSION: ${SYMFONY_VERSION:-6.4}
+        SYMFONY_VERSION: ${SYMFONY_VERSION:-7.1}
         STABILITY: ${STABILITY:-stable}
     restart: unless-stopped
     environment:
