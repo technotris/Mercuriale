@@ -9,6 +9,12 @@ Pour lancer le serveur en docker
 ```
  make up
 ```
+Pour charger le schéma de base de données et le premier utilisateur:
+
+```
+ docker compose exec php bin/console doctrine:migrations:migrate
+ docker compose exec php bin/console doctrine:fixtures:load
+```
 
 Pour lancer le messenger handler
 ```
