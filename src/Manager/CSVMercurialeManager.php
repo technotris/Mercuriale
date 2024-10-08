@@ -22,8 +22,9 @@ class CSVMercurialeManager extends AbstractMercurialeManager
             list($productName, $code, $price) = $line;
             $lines[] = [$productName, $code, $price];
         }
-		
+
         $this->process($fileImport, $lines);
+
         return true;
     }
 }
