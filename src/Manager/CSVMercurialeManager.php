@@ -13,7 +13,6 @@ class CSVMercurialeManager extends AbstractMercurialeManager
         if ('csv' !== strtolower($file->getExtension())) {
             return false;
         }
-        $errors = [];
         // Parse CSV
         $import = $file->openFile();
         $import->setFlags(\SplFileObject::READ_CSV);
@@ -23,8 +22,8 @@ class CSVMercurialeManager extends AbstractMercurialeManager
             list($productName, $code, $price) = $line;
             $lines[] = [$productName, $code, $price];
         }
+		
         $this->process($fileImport, $lines);
-
         return true;
     }
 }

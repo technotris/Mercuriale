@@ -122,4 +122,8 @@ class FileImport
     {
         return $this->importFile;
     }
+	
+	public function __toString(): string {
+		return sprintf('#%d %s', $this->getId(), $this->getFilename());
+	}
 }

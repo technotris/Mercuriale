@@ -13,7 +13,6 @@ class SecurityController extends AbstractController
     public function adminlogin(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
-            dump($this->getUser()->getRoles());
             if (in_array('ROLE_ADMIN', $this->getUser()->getRoles())) {
                 return $this->redirectToRoute('admin');
             }
@@ -30,21 +29,6 @@ class SecurityController extends AbstractController
             'target_path' => $this->generateUrl('admin'),
             'translation_domain' => 'admin',
             'favicon_path' => '/favicon.ico',
-        ]);
-    }
-
-    #[Route(path: '/login', name: 'app_login')]
-    public function login(AuthenticationUtils $authenticationUtils): Response
-    {
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
-
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-
-        return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error' => $error,
         ]);
     }
 
