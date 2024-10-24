@@ -7,8 +7,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       #add another user not root for access db
-      MYSQL_USER: foodomarket
-      MYSQL_PASSWORD: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: technique
       MYSQL_DATABASE: mercuriale
     volumes:
       - ./appdata/db:/var/lib/mysql
@@ -26,7 +26,7 @@ services:
       TRUSTED_PROXIES: ${TRUSTED_PROXIES:-127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16}
       TRUSTED_HOSTS: ^${SERVER_NAME:-example\.com|localhost}|php$$
       # Run "composer require symfony/orm-pack" to install and configure Doctrine ORM
-      DATABASE_URL: mysql://foodomarket:test@db:3306/mercuriale
+      DATABASE_URL: mysql://test:technique@db:3306/mercuriale
       #to change for production
       MAILER_DSN: smtp://mailer:1025
       # The two next lines can be removed after initial installation

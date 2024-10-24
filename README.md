@@ -1,5 +1,5 @@
 # Mercuriale
-Test technique foodomarket
+Code de test technique
 
 Utilisation du repo symfony docker de dunglas
 
@@ -11,6 +11,7 @@ Pour lancer le serveur en docker
 ```
 
 Pour lancer le messenger handler
+
 ```
 make message
 ```

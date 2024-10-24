@@ -18,7 +18,7 @@ class UserFixtures extends Fixture
         // init admin account
         $admin = new User();
         $admin->setEmail('chunhoo.ngo@gmail.com');
-        $admin->setPassword($this->userPasswordHasher->hashPassword($admin, 'testfoodomarket'));
+        $admin->setPassword($this->userPasswordHasher->hashPassword($admin, 'testtechnique'));
         $admin->setRoles(['ROLE_ADMIN', 'ROLE_USER']);
         $manager->persist($admin);
         $manager->flush();
