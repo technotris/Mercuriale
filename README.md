@@ -9,12 +9,26 @@ Pour lancer le serveur en docker
 ```
  make up
 ```
+Pour charger le schéma de base de données et le premier utilisateur:
+
+```
+ docker compose exec php bin/console doctrine:migrations:migrate
+ docker compose exec php bin/console doctrine:fixtures:load
+```
 
 Pour lancer le messenger handler
 
 ```
 make message
 ```
+
+Pour utiliser le service Unsplash il faut une access key dans le .env
+
+Le stockage des prix se fait en int (donc en centimes) pour éviter les possibles erreurs de calculs si on multiple des float.
+
+Pour les tests de notification par e-mail, mailpit a été mis en place:
+
+accès à l'interfacec web: http://localhost:8025/
 
 # FAQ
 
