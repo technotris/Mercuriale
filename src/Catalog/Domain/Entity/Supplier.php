@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Product\Domain\Entity;
+namespace App\Catalog\Domain\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\FileImport\Domain\Entity\FileImport;
-use App\Product\Domain\Entity\SupplierProduct;
+use App\Catalog\Domain\Entity\SupplierProduct;
 
 #[ORM\Entity()]
 #[ORM\UniqueConstraint(name: 'UNIQ_SUPPLIER_NAME', fields: ['name'])]

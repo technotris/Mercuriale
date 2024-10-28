@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Product\Application\Manager;
+namespace App\Product\Application\Service;
 
-use App\Product\Domain\Entity\Product;
+use App\Catalog\Domain\Entity\Product;
 use App\Shared\Application\Service\UnsplashService;
 use Doctrine\ORM\EntityManagerInterface;
 
-class ProductManager
+class UpdateProductImageService
 {
     public function __construct(private EntityManagerInterface $em,
         private UnsplashService $unsplashService)

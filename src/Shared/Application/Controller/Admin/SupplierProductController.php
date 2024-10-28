@@ -2,7 +2,7 @@
 
 namespace App\Shared\Application\Controller\Admin;
 
-use App\Product\Domain\Entity\SupplierProduct;
+use App\Catalog\Domain\Entity\SupplierProduct;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;

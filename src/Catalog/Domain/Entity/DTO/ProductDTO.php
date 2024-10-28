@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Product\Domain\Entity\DTO;
+namespace App\Catalog\Domain\Entity\DTO;
 
-use App\Product\Domain\Entity\Product;
+use App\Catalog\Domain\Entity\Product;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class ProductDTO

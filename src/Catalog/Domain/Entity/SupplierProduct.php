@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Product\Domain\Entity;
+namespace App\Catalog\Domain\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
-use App\Product\Domain\Entity\Supplier;
-use App\Product\Domain\Entity\Product;
+use App\Catalog\Domain\Entity\Supplier;
+use App\Catalog\Domain\Entity\Product;
 use App\FileImport\Domain\Entity\FileImport;
 
 #[ORM\Entity()]

@@ -2,7 +2,7 @@
 
 namespace App\Tests;
 
-use App\Product\Domain\Entity\DTO\ProductDTO;
+use App\Catalog\Domain\Entity\DTO\ProductDTO;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 

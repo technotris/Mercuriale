@@ -3,7 +3,7 @@
 namespace App\FileImport\Application\MessageHandler;
 
 use App\FileImport\Domain\Entity\FileImport;
-use App\FileImport\Application\CSVMercurialeManager;
+use App\FileImport\Application\Service\CSVImportService;
 use App\FileImport\Application\Message\FileImportNotification;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
@@ -15,7 +15,7 @@ class FileImportHandler
 {
     public function __construct(
         private EntityManagerInterface $em,
-        private CSVMercurialeManager $manager,
+        private CSVImportService $manager,
         private WorkflowInterface $importValidation,
     ) {
     }

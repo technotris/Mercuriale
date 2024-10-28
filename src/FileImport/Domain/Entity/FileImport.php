@@ -2,8 +2,8 @@
 
 namespace App\FileImport\Domain\Entity;
 
-use App\Product\Domain\Entity\Supplier;
-use App\Product\Domain\Entity\SupplierProduct;
+use App\Catalog\Domain\Entity\Supplier;
+use App\Catalog\Domain\Entity\SupplierProduct;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;

@@ -1,18 +1,18 @@
 <?php
 
-namespace App\FileImport\Application;
+namespace App\FileImport\Application\Service;
 
-use App\Product\Domain\Entity\DTO\ProductDTO;
+use App\Catalog\Domain\Entity\DTO\ProductDTO;
 use App\FileImport\Domain\Entity\FileImport;
-use App\Product\Domain\Entity\Product;
-use App\Product\Domain\Entity\SupplierProduct;
+use App\Catalog\Domain\Entity\Product;
+use App\Catalog\Domain\Entity\SupplierProduct;
 use App\Shared\Application\Service\MailerService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Workflow\WorkflowInterface;
 
 // Interface allowing templating of methods for different import file format
-abstract class AbstractMercurialeManager
+abstract class AbstractImportService
 {
     public function __construct(private EntityManagerInterface $em,
         private ValidatorInterface $validator,

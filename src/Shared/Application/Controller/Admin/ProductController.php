@@ -2,8 +2,8 @@
 
 namespace App\Shared\Application\Controller\Admin;
 
-use App\Product\Domain\Entity\Product;
-use App\Product\Application\Manager\ProductManager;
+use App\Catalog\Domain\Entity\Product;
+use App\Product\Application\Service\UpdateProductImageService;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -43,7 +43,7 @@ class ProductController extends AbstractCrudController
         ;
     }
 
-    public function updateImage(AdminContext $context, ProductManager $productManager, AdminUrlGenerator $adminUrlGenerator): RedirectResponse
+    public function updateImage(AdminContext $context, UpdateProductImageService $productManager, AdminUrlGenerator $adminUrlGenerator): RedirectResponse
     {
         $product = $context->getEntity()->getInstance();
         if (is_null($product->getImage())) {

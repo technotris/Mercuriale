@@ -3,7 +3,7 @@
 namespace App\Tests;
 
 use App\FileImport\Domain\Entity\FileImport;
-use App\Product\Domain\Entity\Supplier;
+use App\Catalog\Domain\Entity\Supplier;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Workflow\WorkflowInterface;
 

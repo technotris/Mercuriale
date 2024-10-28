@@ -38,7 +38,7 @@ services:
             - [ setAnnotationReader, [ '@gedmo.mapping.driver.attribute' ] ]
             # The `clock` service was introduced in Symfony 6.2; if using an older Symfony version, you can either comment this call or provide your own PSR-20 Clock implementation
             - [ setClock, [ '@clock' ] ]
-    App\Service\UnsplashService:
+    App\Shared\Application\Service\UnsplashService:
         arguments:
             - '%env(UNSPLASH_APP_KEY)%'
         

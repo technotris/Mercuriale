@@ -3,9 +3,9 @@
 namespace App\Shared\Application\Controller\Admin;
 
 use App\FileImport\Domain\Entity\FileImport;
-use App\Product\Domain\Entity\Product;
-use App\Product\Domain\Entity\Supplier;
-use App\Product\Domain\Entity\SupplierProduct;
+use App\Catalog\Domain\Entity\Product;
+use App\Catalog\Domain\Entity\Supplier;
+use App\Catalog\Domain\Entity\SupplierProduct;
 use App\Auth\Domain\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;

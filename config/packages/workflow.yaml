@@ -9,7 +9,7 @@ framework:
                 type: 'method'
                 property: 'status'
             supports:
-                - App\Entity\FileImport
+                - App\FileImport\Domain\Entity\FileImport
             initial_marking: draft
             places:          # defining places manually is optional
                 - draft

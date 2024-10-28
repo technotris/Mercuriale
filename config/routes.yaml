@@ -3,3 +3,13 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+auth:
+    resource:
+        path: ../src/Auth/Application/Controller/
+        namespace: App\Auth\Application\Controller
+    type: attribute
+backoffice:
+    resource:
+        path: ../src/Shared/Application/Controller/
+        namespace: App\Shared\Application\Controller
+    type: attribute

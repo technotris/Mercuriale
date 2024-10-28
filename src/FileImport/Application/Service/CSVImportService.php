@@ -1,10 +1,10 @@
 <?php
 
-namespace App\FileImport\Application;
+namespace App\FileImport\Application\Service;
 
 use App\FileImport\Domain\Entity\FileImport;
 
-class CSVMercurialeManager extends AbstractMercurialeManager
+class CSVImportService extends AbstractImportService
 {
     // CSV import
     public function parse(FileImport $fileImport): bool

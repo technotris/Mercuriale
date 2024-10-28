@@ -3,7 +3,7 @@
 namespace App\Shared\Application\Controller\Admin;
 
 use App\FileImport\Domain\Entity\FileImport;
-use App\FileImport\Application\CSVMercurialeManager;
+use App\FileImport\Application\Service\CSVImportService;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
@@ -53,7 +53,7 @@ class FileImportController extends AbstractCrudController
         ;
     }
 
-    public function dryParse(AdminContext $context, CSVMercurialeManager $manager, AdminUrlGenerator $adminUrlGenerator): RedirectResponse
+    public function dryParse(AdminContext $context, CSVImportService $manager, AdminUrlGenerator $adminUrlGenerator): RedirectResponse
     {
         $fileImport = $context->getEntity()->getInstance();
         $manager->parse($fileImport);
